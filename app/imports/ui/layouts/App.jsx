@@ -17,6 +17,7 @@ import ListLeaderboard from '../pages/ListLeaderboard';
 import ListStuff from '../pages/ListStuff';
 import AddStuff from '../pages/AddStuff';
 import ListLeaderboardAdmin from '../pages/ListLeaderboardAdmin';
+import Create from '../pages/Create';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -29,6 +30,7 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
+              <ProtectedRoute path="/create" component={Create}/>
               <ProtectedRoute path="/listleaderboard" component={ListLeaderboard}/>
               <ProtectedRoute path="/list" component={ListStuff}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
