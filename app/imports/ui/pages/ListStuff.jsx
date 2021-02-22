@@ -18,14 +18,17 @@ class ListStuff extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">List Stuff</Header>
-          <Table celled>
+          <Header as="h2" textAlign="center">Available Sessions</Header>
+          <Table style={{ backgroundColor: 'white' }}>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Quantity</Table.HeaderCell>
-                <Table.HeaderCell>Condition</Table.HeaderCell>
-                <Table.HeaderCell>Edit</Table.HeaderCell>
+                <Table.HeaderCell>Class</Table.HeaderCell>
+                <Table.HeaderCell>Reason</Table.HeaderCell>
+                <Table.HeaderCell>Time</Table.HeaderCell>
+                <Table.HeaderCell>Day</Table.HeaderCell>
+                <Table.HeaderCell>Description</Table.HeaderCell>
+                <Table.HeaderCell>Find Group?</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>
