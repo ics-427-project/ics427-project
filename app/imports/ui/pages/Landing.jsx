@@ -15,7 +15,7 @@ class Landing extends React.Component {
           <div className="landing-page-style">
             <Grid id='landing-page' style={gridStyle} textAlign='center' container>
               <Grid.Row>
-                <Header as="h1" size="huge">Welcome to the ICS Study Hub!</Header>
+                <Header as="h1" size="huge">Welcome to the Study Hub!</Header>
               </Grid.Row>
               <Grid.Row columns={3}>
                 {this.props.currentUser === '' ? (
