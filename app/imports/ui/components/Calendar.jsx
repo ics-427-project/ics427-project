@@ -55,6 +55,81 @@ export default class Calendar extends React.Component {
         );
     }
 
+    renderSidebar() {
+        return (
+            <Container>
+                <div className='demo-app-sidebar'>
+                    <div className='demo-app-sidebar-section'>
+                        <h2>Instructions</h2>
+                        <ul>
+                            <li>Select dates and you will be prompted to create a new study session</li>
+                            <li>Drag, drop, and resize sessions</li>
+                            <li>Click an event to delete it</li>
+                        </ul>
+                    </div>
+                    <div className='demo-app-sidebar-section'>
+                        <label>
+                            <input
+                                type='checkbox'
+                                checked={this.state.weekendsVisible}
+                                onChange={this.handleWeekendsToggle}
+                            />
+                            toggle weekends
+                        </label>
+                    </div>
+                </div>
+            </Container>
+        );
+    }
 
-    
+    handleWeekendsToggle = () => {
+        this.setState({
+            weekendsVisible: !this.state.weekendsVisible,
+        });
+    }
+
+    handleDateSelect = (selectInfo) => {
+        // eslint-disable-next-line no-undef,no-alert
+        const title = prompt('Please enter a new title for your event');
+        const calendarApi = selectInfo.view.calendar;
+
+        calendarApi.unselect();// clear date selection
+
+        if (title) {
+            calendarApi.addEvent({
+                id: createEventId(),
+                title,
+                start: selectInfo.startStr,
+                end: selectInfo.endStr,
+                allDay: selectInfo.allDay,
+            });
+        }
+    }
+
+    handleEventClick = (clickInfo) => {
+        // eslint-disable-next-line no-undef,no-restricted-globals,no-alert
+        swal({
+            title: 'Do you want to delete study session?',
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    clickInfo.event.remove(this.props.stuffs._id);
+                    Stuffs.collection.remove(this.props.stuffs._id);
+                    swal('Study session deleted');
+                }
+            });
+    }
+
+    handleEvents = (events) => {
+        this.setState({
+            currentEvents: events,
+        });
+    }
+}
+
+    Calendar.propTypes = {
+    stuffs: PropTypes.array.isRequired,
+
 };
