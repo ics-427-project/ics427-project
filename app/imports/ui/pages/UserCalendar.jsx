@@ -56,6 +56,6 @@ export default withTracker(() => {
                 return { id: index, title: value.name, date: `${value.year}-${months[value.month]}-${day}` };
             },
         ),
-
+        ready: subscription.ready(),
     };
 })(UserCalendar);
