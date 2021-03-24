@@ -28,10 +28,33 @@ export default class Calendar extends React.Component {
 
     render() {
         return (
-            <div>
-
+            <div className='demo-app'>
+                {this.renderSidebar()}
+                <div className='demo-app-main'>
+                    <FullCalendar
+                        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+                        headerToolbar={{
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'dayGridMonth,timeGridWeek,timeGridDay',
+                        }}
+                        initialView='dayGridMonth'
+                        editable={true}
+                        selectable={true}
+                        selectMirror={true}
+                        dayMaxEvents={true}
+                        weekends={this.state.weekendsVisible}
+                        select={this.handleDateSelect}
+                        eventContent={renderEventContent}
+                        eventClick={ e => this.handleEventClick(e, this.props.stuffs._id)}
+                        eventsSet={this.handleEvents}
+                        events={this.props.stuffs}
+                    />
+                </div>
             </div>
         );
     }
+
+
     
 };
