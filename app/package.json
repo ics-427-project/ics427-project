@@ -11,6 +11,7 @@
     "core-js": "^3.8.3",
     "fullcalendar": "^5.5.1",
     "graphql": "^14.5.8",
+    "iroh": "^0.3.0",
     "meteor-node-stubs": "^1.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
