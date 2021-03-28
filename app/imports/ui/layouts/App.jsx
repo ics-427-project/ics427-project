@@ -18,7 +18,7 @@ import ListStuff from '../pages/ListStuff';
 import AddStuff from '../pages/AddStuff';
 import ListLeaderboardAdmin from '../pages/ListLeaderboardAdmin';
 import Create from '../pages/Create';
-import UserCalendar from '../pages/UserCalendar'
+import UserCalendar from '../pages/UserCalendar';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {

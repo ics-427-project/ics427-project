@@ -6,18 +6,7 @@ import { Container } from 'semantic-ui-react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import swal from 'sweetalert';
-import { createEventId } from '../../api/Event/event-utils';
 import { Stuffs } from '../../api/stuff/Stuff';
-
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-function renderEventContent(eventInfo) {
-    return (
-        <>
-            <b>{eventInfo.timeText}</b>
-            <i>{eventInfo.event.title}</i>
-        </>
-    );
-}
 
 export default class Calendar extends React.Component {
     /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
@@ -45,7 +34,6 @@ export default class Calendar extends React.Component {
                         dayMaxEvents={true}
                         weekends={this.state.weekendsVisible}
                         select={this.handleDateSelect}
-                        eventContent={renderEventContent}
                         eventClick={ e => this.handleEventClick(e, this.props.stuffs._id)}
                         eventsSet={this.handleEvents}
                         events={this.props.stuffs}
@@ -97,7 +85,6 @@ export default class Calendar extends React.Component {
 
         if (title) {
             calendarApi.addEvent({
-                id: createEventId(),
                 title,
                 start: selectInfo.startStr,
                 end: selectInfo.endStr,
