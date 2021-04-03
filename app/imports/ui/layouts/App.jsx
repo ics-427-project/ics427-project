@@ -29,8 +29,8 @@ class App extends React.Component {
             <NavBar/>
             <Switch>
               <Route exact path="/" component={Landing}/>
-              <Route path="/signin" component={Signin}/>
-              <Route path="/signup" component={Signup}/>
+              <VisitorRoute path="/signin" component={Signin}/>
+              <VisitorRoute path="/signup" component={Signup}/>
               <ProtectedRoute path="/create" component={Create}/>
               <ProtectedRoute path="/listleaderboard" component={ListLeaderboard}/>
               <ProtectedRoute path="/list" component={ListStuff}/>
@@ -100,6 +100,19 @@ const BothRoute = ({ component: Component, ...rest }) => (
     />
 );
 
+const VisitorRoute = ({ component: Component, ...rest }) => (
+    <Route
+        {...rest}
+        render={(props) => {
+          const isLogged = Meteor.userId() === null;
+          return isLogged ?
+              (<Component {...props} />) :
+              (<Redirect to={{ pathname: '/notfound', state: { from: props.location } }}/>
+              );
+        }}
+    />
+);
+
 /** Require a component and location to be passed to each ProtectedRoute. */
 ProtectedRoute.propTypes = {
   component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
@@ -114,6 +127,12 @@ AdminProtectedRoute.propTypes = {
 
 /** Require a component and location to be passed to each ProtectedRoute. */
 BothRoute.propTypes = {
+  component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+  location: PropTypes.object,
+};
+
+/** Require a component and location to be passed to each ProtectedRoute. */
+VisitorRoute.propTypes = {
   component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   location: PropTypes.object,
 };
