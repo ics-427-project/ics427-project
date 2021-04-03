@@ -38,11 +38,11 @@ class App extends React.Component {
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
               <ProtectedRoute path="/user-profile" component={Profile}/>
-              <ProtectedRoute path="/usercalendar" component={UserCalendar}/>
+              <BothRoute path="/usercalendar" component={UserCalendar}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
               <AdminProtectedRoute path="/leaderboardadmin" component={ListLeaderboardAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
-              <Route component={NotFound}/>
+              <Route path="/notfound" component={NotFound}/>
             </Switch>
             <Footer/>
           </div>
@@ -61,7 +61,8 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
     {...rest}
     render={(props) => {
       const isLogged = Meteor.userId() !== null;
-      return isLogged ?
+      const isUser = Roles.userIsInRole(Meteor.userId(), 'admin');
+      return (isLogged && !isUser) ?
           (<Component {...props} />) :
           (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
       );
@@ -88,6 +89,19 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
     />
 );
 
+const BothRoute = ({ component: Component, ...rest }) => (
+    <Route
+        {...rest}
+        render={(props) => {
+          const isLogged = Meteor.userId() !== null;
+          return isLogged ?
+              (<Component {...props} />) :
+              (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+              );
+        }}
+    />
+);
+
 /** Require a component and location to be passed to each ProtectedRoute. */
 ProtectedRoute.propTypes = {
   component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
@@ -96,6 +110,12 @@ ProtectedRoute.propTypes = {
 
 /** Require a component and location to be passed to each AdminProtectedRoute. */
 AdminProtectedRoute.propTypes = {
+  component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+  location: PropTypes.object,
+};
+
+/** Require a component and location to be passed to each ProtectedRoute. */
+BothRoute.propTypes = {
   component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   location: PropTypes.object,
 };

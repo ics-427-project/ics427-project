@@ -13,6 +13,7 @@
     {
       "email": "john@foo.com",
       "password": "changeme",
+      "role": "user",
       "firstname": "John",
       "lastname": "Foo",
       "points": "1",

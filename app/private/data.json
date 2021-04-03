@@ -17,83 +17,103 @@
     },
     {
       "email": "eharmon@chessreview.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "cdiggory@hogwarts.edu",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "charlie.kelly@sunny.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "nickmiller@clydes.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "schmidt@assstrat.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "michael.scott@michaelscottpapercompany.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "fryder@disney.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "regionalmanager@dundermifflin.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "john@doe.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "mgray@greyslonememorial.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "scooper@caltech.edu",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "jon@nightswatch.org",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "chanandler@aol.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "gellar@dinomuseum.org",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "lemon@thegirlieshow.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "gilmore@aol.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "tommy@picklesinventions.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "morgan@flpd.com",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "house@md.edu",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     },
     {
       "email": "pparker@nyu.edu",
-      "password": "changeme"
+      "password": "changeme",
+      "role": "user"
     }
   ],
   "sessions": [
