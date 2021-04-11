@@ -11,7 +11,10 @@ class StuffsCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      name: String,
+      name: {
+        type: String,
+        max: 50,
+      },
       className: {
         type: String,
         allowedValues: ['ICS 101', 'ICS 102', 'ICS 103', 'ICS 110', 'ICS 111', 'ICS 141', 'ICS 210',
@@ -45,10 +48,13 @@ class StuffsCollection {
       },
       year: {
         type: String,
-        allowedValues: ['2020', '2021', '2022', '2023', '2024', '2025'],
-        defaultValue: '2020',
+        allowedValues: ['2021', '2022'],
+        defaultValue: '2021',
       },
-      description: String,
+      description: {
+        type: String,
+        max: 500,
+      },
       findGroup: {
         type: String,
         allowedValues: ['Yes', 'No'],

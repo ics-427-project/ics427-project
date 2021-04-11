@@ -106,7 +106,7 @@ class Create extends React.Component {
                 <TextField id='create-name' name='name' showInlineError={true} placeholder={'Your name'}/>
                 <SelectField id='create-class' name='className' showInlineError={true}/>
                 <SelectField id='create-reason' name='reason' showInlineError={true}/>
-                <DateField id='create-date' name='date' showInlineError={true}/>
+                <DateField id='create-date' name='date' showInlineError={true} min={new Date()}/>
                 <SelectField id='create-findgroup' name='findGroup' showInlineError={true}/>
                 <LongTextField id='create-description' name='description' showInlineError={true}
                                placeholder={'Description of your study session'}/>
