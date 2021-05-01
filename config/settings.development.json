@@ -2,7 +2,7 @@
   "defaultAccounts": [
     {
       "email": "admin@foo.com",
-      "password": "password1",
+      "password": "Abcd1234",
       "role": "admin",
       "firstname": "Admin",
       "lastname": "Istrator",
@@ -12,7 +12,7 @@
     },
     {
       "email": "john@foo.com",
-      "password": "password2",
+      "password": "Qwer6789",
       "firstname": "John",
       "lastname": "Foo",
       "points": "1",
