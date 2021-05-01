@@ -20,10 +20,13 @@ This section provides information of interest to Meteor developers wishing to us
 
 ### Installation
 First, [install Meteor](https://www.meteor.com/install).
+![image](https://user-images.githubusercontent.com/70462461/116771350-72e34000-a9e6-11eb-8add-45a65e402069.png)
 
 Second, go to the [ICS-427-Project page](https://github.com/ics-427-project/ics427-project), and click the "Use this template" button. Complete the dialog box to create a new repository that you own that is initialized with this template's files.
+![image](https://user-images.githubusercontent.com/70462461/116771339-4c250980-a9e6-11eb-9529-3cc7c5fe25a0.png)
 
 Third, go to your newly created repository, and click the "Clone or download" button to download your new GitHub repo to your local file system.  Using [GitHub Desktop](https://desktop.github.com/) is a great choice if you use MacOS or Windows.
+![image](https://user-images.githubusercontent.com/70462461/116771367-960def80-a9e6-11eb-8735-330477b53729.png)
 
 Fourth, cd into the app/ directory of your local copy of the repo, and install third party libraries with:
 
