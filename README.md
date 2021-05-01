@@ -217,4 +217,4 @@ Most of the security testing on this application were done manually as there wer
 
 ### Release License
 [License](https://github.com/ics-427-project/ics427-project/blob/master/LICENSE) and 
-[Release](https://github.com/ics-427-project/ics427-project/releases/tag/v1.0)
+[Release](https://github.com/ics-427-project/ics427-project/releases/tag/v1.2)
