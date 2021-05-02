@@ -213,7 +213,7 @@ tests/			## Implementation of testcafe to test code
 ```
 
 ### Security Notes
-Most of the security testing on this application were done manually as there were no automated fuzzing tester that can check every possible scenario so there are possibilities of having a security problem that was not tested in this current release.
+Most of the security testing on this application were done manually as there were no automated fuzzing tester that can check every possible scenario so there are possibilities of having a security problem that was not tested in this current release. As for the functions application, there are currently some Pass FSR(with exceptions) and FSR escalation like the sign in feature that does not check the amount of incorrect login attempts, leaderboards, and creating a session but will be updated and patched to fix those issues in a later release version.
 
 ### Release License
 [License](https://github.com/ics-427-project/ics427-project/blob/master/LICENSE) and 
